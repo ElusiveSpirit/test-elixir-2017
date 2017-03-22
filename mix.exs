@@ -16,7 +16,8 @@ defmodule KVstore.Mixfile do
   def application do
     [
       applications: [:logger, :cowboy, :plug],
-      mod: {KVstore, []}
+      mod: {KVstore, []},
+      env: [cowboy_port: 4000]
     ]
   end
 
@@ -32,7 +33,8 @@ defmodule KVstore.Mixfile do
   defp deps do
     [
       {:plug, "~> 1.3.3"},
-      {:cowboy, "~> 1.1.2"}
+      {:cowboy, "~> 1.1.2"},
+      {:poison, "~> 3.0"}
     ]
   end
 end
